@@ -2,3 +2,11 @@ h1 {
     margin-bottom: 0%;
     background-color: skyblue;
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+ }
+ 
+ .row > div[class*='col-sm-3'] {
+   display: flex;
+    }
