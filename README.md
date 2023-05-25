@@ -33,10 +33,10 @@ THEN I am again presented with current and future conditions for that city
 
 
 ## 🔗 Link to Repo
-[https://github.com/JHeeebert/workday-scheduler]
+[https://github.com/JHeeebert/weather-app]
 
 ## 🔗 Link to Deployed Site
-[https://jheeebert.github.io/workday-scheduler/]
+[https://jheeebert.github.io/weather-app/]
 
 ## 🫶 Contributors
 Joshua Hebert
