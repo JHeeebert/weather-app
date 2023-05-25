@@ -1,7 +1,6 @@
 // array to hold search history
 var searchHistory = []
 var city = ""
-var apiKey = "10dd70968c138de58593c18c06b36159"
 
 //Open weather API Call
 var cityWeather = function (city) {
