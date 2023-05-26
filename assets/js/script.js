@@ -2,7 +2,10 @@
 var searchHistoryArr = [];
 var searchCityButton = ("#search-button");
 var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?lon=-80.7108608' + '&lat=35.2387072&appid=10dd70968c138de58593c18c06b36159';
-//-----Function for search bar-----//
+//-----Create Submit Button Function-----//
+
+
+//-----Function for search bar text area-----//
 const searchCityInput = document.querySelector('.input')
 searchCityInput.addEventListener("input", (e) => {
   //-----Declare and assign the value of the event's target to a----//
@@ -69,9 +72,14 @@ function historyDisplay() {
     historyList.addClass('list-group-item');
     historyList.text(localStorageHistory[i].city);
     ('search-history').prepend(historyList);
-    ('search-history-list').show();
+    ('search-history').show();
   }
   return (searchHistoryArr = localSearchHistory);
+}
+//----writeHistory Function------//
+function writeHistory() {
+  searchHistoryArr.length = 0;
+  localStorage.setItem('search-history', JSON.stringify(searchHistoryArr));
 }
 //-------Function for Clear-Search-History Button------// 
 const clearHistoryButton = document.getElementById('clear-history')
@@ -81,9 +89,9 @@ clearHistoryButton.addEventListener("click", () => {
   //-------- results from the page ------//
   function clearHistory() {
     ('clear-history').on('click', function () {
-      ('#search-history-list').empty();
+      ('search-history').empty();
       ('search-history-container').hide();
-      localStorage.removeItem('searchHistory');
+      localStorage.removeItem('search-history');
       createHistory();
     });
   }
