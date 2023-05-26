@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header class="container-fluid text-center text-white bg-light p-2">
+  <header class="container-fluid text-center text-white p-2">
     <h1>☔☀️ Weather App ☀️☔</h1>
     <a href="https://www.weather.gov/"><i class="fa fa-2x fa-cloud fa-fw" aria-hidden="true"></i></a>
     <a href="https://www.nhc.noaa.gov/"><i class="fa fa-2x fa-umbrella fa-fw" aria-hidden="true"></i></a>
@@ -20,25 +20,28 @@
   </header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 bg-light">
+      <div class="col-lg-4">
         <div class="search-container" id="sbox">
-          <form method="get">
-            <label>City
-              <input search="submitted-city" autocomplete="city" id="city-submit" />
+          <form class="form" method="get">
+            <label>City Search
+              <input id="city-submit" type="text" class="input" placeholder="Your Cities Weather.......!" search="city"
+                autocomplete="city" />
             </label>
             <button type="button" class="btn btn-primary" id="search-button" type="submit" value="submit">Search<i
                 class="fa fa-fw fa-search"></i></button>
           </form>
         </div>
-        <h4>Search History:</h4>
-        <div id="search-history"></div>
-        <ul class="list-group" id="search-history">
-        </ul>
+        <div class="row">
+          <h4>Search History:</h4>
+          <div id="search-history-container"></div>
+          <ul class="list-group" id="search-history-list">
+          </ul>
+        </div>
         <button type="button" class="btn btn-primary" id="clear-history" type="submit" value="submit">Clear-History<i
             class="fa fa-fw fa-trash"></i></button>
       </div>
-      <h2 class="card-title mt-3">Current-Forecast</h2>
       <div class="current-box row justify-content-between">
+        <h2 class="card-title mt-3">Current-Forecast</h2>
         <div class="current-content">
           <div class="current-date"></div>
           <div class="current-icon"></div>
@@ -49,21 +52,20 @@
         <div class="current-forecast-box"></div>
       </div>
     </div>
-    <div>
+    <div class="fiver-box row justify-content-between">
       <h2 class="card-title mt-3">5-Day-Forecast</h2>
-      <!-----------Filled by JS----------->
-      <div class="fiver-box row justify-content-between">
-        <div class="fiver-content">
-          <div class="fiver-location"></div>
-          <div class="fiver-date"></div>
-          <div class="fiver-icon"></div>
-          <div class="fiver-temp"></div>
-          <div class="fiver-wind"></div>
-          <div class="fiver-humid"></div>
-        </div>
-        <div class="fiver-forecast-box"></div>
+      <div class="fiver-content">
+        <div class="fiver-location"></div>
+        <div class="fiver-date"></div>
+        <div class="fiver-icon"></div>
+        <div class="fiver-temp"></div>
+        <div class="fiver-wind"></div>
+        <div class="fiver-humid"></div>
       </div>
+      <div class="fiver-forecast-box"></div>
     </div>
+  </div>
+  </div>
   </div>
   </div>
   </div>

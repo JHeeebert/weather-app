@@ -1,4 +1,4 @@
-# 🧪 Weather-App 🧪
+# 🌦 Weather-App 🌞
 Weather-App Challenge for UNCC Coding Bootcamp
 
 ## User Story
@@ -26,7 +26,7 @@ THEN I am again presented with current and future conditions for that city
 ## 🔗‍💥 Issues Faced During Project
 1.  Debugging was crucial in this challenge and pulling the data from the OpenWeather API was a task in itself.
 2.  Once I was able to pull data things started to make sense and the next steps will be rendering the information found to the page 
-3.  Continuing work on JavaScript to try and get full functional
+3.  Continuing work on JavaScript to try and get fully functional
 
 ## 🔎 Preview
 <img src= "./assets/images/weather.app.ss.jpg" 
