@@ -24,8 +24,9 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 ## 🔗‍💥 Issues Faced During Project
-1.  I am having issues confusing different languages and API's and think that casued bugs in my code 
-2. I really like this challenge I just feel like the time given and with project starting I could have put more into it!
+1.  Debugging was crucial in this challenge and pulling the data from the OpenWeather API was a task in itself.
+2.  Once I was able to pull data things started to make sense and the next steps will be rendering the information found to the page 
+3.  Continuing work on JavaScript to try and get full functional
 
 ## 🔎 Preview
 <img src= "./assets/images/weather.app.ss.jpg" 

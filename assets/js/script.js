@@ -1,29 +1,27 @@
-// array to hold search history
+//Universal Variables
 var searchHistory = []
 var city = ""
-
-//Open weather API Call
-var cityWeather = function (city) {
-  // Sett url parameters
-  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?city&units=imperial&lat=35.2387072&lon=-80.7108608&appid=10dd70968c138de58593c18c06b36159"
-  fetch(apiUrl)
-    .then(function (response) {
-      if (response.ok) {
-        response.json().then(function (data) {
-          cityWeather(data)
-        })
-      } else {
-        alert(Error, "+ resp.statusText")
-      }
-    })
-    .catch(function (error) {
-      alert("Cannot Reach OpenWeather")
-    })
-    
-}
-console.log(cityWeather)
-//function for form submit
-var submitForm = function (event) {
+var apiUrl = 'https://fcc-weather-api.glitch.me/api/current?lon=-80.7108608' + '&lat=35.2387072';
+//Call to OpenWeather API
+fetch(apiUrl)
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+  })
+  .then(data => {
+    //Current City Weather Data based off Lat/Lon coordinates from openWeather API 
+    //that we can use for generating information
+    //Current Weather Forecast
+    var currDate = document.getElementsByClassName('current-date')[0];
+    var currIcon = document.getElementsByClassName('current-icon')[0];
+    var currTemp = document.getElementsByClassName('current-temp')[0];
+    var currWind = document.getElementsByClassName('current-wind')[0];
+    var currHumid = document.getElementsByClassName('current-humid')[0];
+    console.log(data);
+  })
+//City Search Bar
+const submitForm = function (event) {
   //stop page from default reload action
   event.preventDefault()
   var searchName = (".searchName").val().trim()
@@ -34,31 +32,22 @@ var submitForm = function (event) {
     alert("You Must Enter A City Name")
   }
 }
-
-var weatherDisplay = function (weatherInfo) {
-  var celcius = Math.round(parseFloat(data.main.temp) - 273.15);
-  var fahrenheit = Math.round(((parseFloat(data.main.temp) - 273.15) * 1.8) + 32);
-  var description = data.weather[0].description;
-
-  document.getElementById('current-icon').innerHTML = description;
-  document.getElementById('current-city').innerHTML = data.name;
-  document.getElementById('current-Temp').innerHTML = fahrenheit + '&deg;';
-  weatherDisplay(data)
-  //Five Day Forecast
-  fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + weatherInfo.name + "&appid=10dd70968c138de58593c18c06b36159")
-    .then(function (response) {
-      response.json().then(function (data) {
-        (".fiver").empty()
-        for (i = 7; i <= data.list.length; i += 8) {
-          let fiver = `
-      
-      `;
-          $("#fiver").append(fiverCard);
-        }
-      })
-    })
-  lastCitySearched = weatherInfo.name;
-  saveSearchHistory(weatherInfo.name);
-}
+var fiverUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=10dd70968c138de58593c18c06b36159&cnt=5';
+fetch(fiverUrl)
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+  })
+  .then(fiverData => {
+    //Five Day Forecast Data from API That we can use for generating information
+    //Five Day Forecast
+    var fiverDate = document.getElementsByClassName('fiver-date')[0];
+    var fiverIcon = document.getElementsByClassName('fiver-icon')[0];
+    var fiverTemp = document.getElementsByClassName('fiver-temp')[0];
+    var fiverWind = document.getElementsByClassName('fiver-wind')[0];
+    var fiverHumid = document.getElementsByClassName('fiver-humid')[0];
+    console.log(fiverData);
+  })
 
 
