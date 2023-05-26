@@ -1,4 +1,5 @@
 # 🌦 Weather-App 🌞
+
 Weather-App Challenge for UNCC Coding Bootcamp
 
 ## User Story
@@ -24,29 +25,35 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 ## 🔗‍💥 Issues Faced During Project
+
 1.  Debugging was crucial in this challenge and pulling the data from the OpenWeather API was a task in itself.
-2.  Once I was able to pull data things started to make sense and the next steps will be rendering the information found to the page 
+2.  Once I was able to pull data things started to make sense and the next steps will be rendering the information found to the page
 3.  Continuing work on JavaScript to try and get fully functional
 
 ## 🔎 Preview
+
 <img src= "./assets/images/weather.app.ss.jpg" 
     alt= "this should be a screenshot of the project"/>
 
-
 ## 🔗 Link to Repo
+
 [https://github.com/JHeeebert/weather-app]
 
 ## 🔗 Link to Deployed Site
+
 [https://jheeebert.github.io/weather-app/]
 
 ## 🫶 Contributors
+
 Joshua Hebert
 Jhebertcocktails@gmail.com
 
 ## ☑️ Version History
+
 **See commit history on GitHub Repo**
 
 ## 🙏 Acknowledgments
-*Thank you Andrew and Will for teaching us the tools needed to make this happen!*
 
-Made with 🖤 by Joshua Hebert     
+_Thank you Andrew and Will for teaching us the tools needed to make this happen!_
+
+Made with 🖤 by Joshua Hebert

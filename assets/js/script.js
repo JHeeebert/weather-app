@@ -22,37 +22,38 @@ searchCityInput.addEventListener("input", (e) => {
 function createHistory(citySearchName) {
   var searchHistoryObject = {}
   if (searchHistoryArr.length === 0) {
-    searchHistoryObject['city'] =citySearchName
+    searchHistoryObject['city'] = citySearchName
     searchHistoryArr.push(searchHistoryObject)
     localStorage.setItem('search-history'), json.stringify(searchHistoryArr)
   } else {
     var scanHistory = searchHistoryArr.find(
-      ({city}) => city === citySearchName
+      ({ city }) => city === citySearchName
     )
     if (searchHistoryArr.length < 5) {
       if (scanHistory === undefined) {
         searchHistoryObject['city'] = citySearchName;
         searchHistoryArr.push(searchHistoryObject);
         localStorage.setItem(
-            'search-history',
-            JSON.stringify(searchHistoryArr)
+          'search-history',
+          JSON.stringify(searchHistoryArr)
         );
+      }
+
+    } else {
+      if (scanHistory === undefined) {
+        searchHistoryArr.shift()
+        searchHistoryObject['city'] = citySearchName
+        searchHistoryArr.push(searchHistoryObject)
+        localStorage.setItem(
+          'seacrh-history',
+          json.stringify(searchHistoryArr)
+        )
+      }
     }
-  
-  } else {
-    if (scanHistory === undefined) {
-      searchHistoryArr.shift()
-      searchHistoryObject['city'] = citySearchName
-      searchHistoryArr.push(searchHistoryObject)
-      localStorage.setItem(
-        'seacrh-history', 
-        json.stringify(searchHistoryArr) 
-      )
-    }
-  } 
-  ('search-history').empty();
-  historyDisplay();
-}}
+    ('search-history').empty();
+    historyDisplay();
+  }
+}
 //-----Create Function to display Search History-----//
 function historyDisplay() {
   var getLocalStorageHistory = localStorage.getItem('search-history')
@@ -60,8 +61,8 @@ function historyDisplay() {
 
   if (getLocalStorageHistory === null) {
     createHistory()
-    getLocalStorageHistory= localStorage.getItem('search-history')
-    localStorageHistory = JSON.parse(getLocalStorageHistory) 
+    getLocalStorageHistory = localStorage.getItem('search-history')
+    localStorageHistory = JSON.parse(getLocalStorageHistory)
   }
   for (var i = 0; i < localStorageHistory.length; i++) {
     var historyList = $('<li>');
@@ -69,8 +70,8 @@ function historyDisplay() {
     historyList.text(localStorageHistory[i].city);
     ('search-history').prepend(historyList);
     ('search-history-list').show();
-}
-return (searchHistoryArr = localSearchHistory);
+  }
+  return (searchHistoryArr = localSearchHistory);
 }
 //-------Function for Clear-Search-History Button------// 
 const clearHistoryButton = document.getElementById('clear-history')
@@ -79,7 +80,7 @@ clearHistoryButton.addEventListener("click", () => {
   //-------- 1. write a function that removes any previous-----//
   //-------- results from the page ------//
   function clearHistory() {
-      ('clear-history').on('click', function () {
+    ('clear-history').on('click', function () {
       ('#search-history-list').empty();
       ('search-history-container').hide();
       localStorage.removeItem('searchHistory');
@@ -87,7 +88,6 @@ clearHistoryButton.addEventListener("click", () => {
     });
   }
 })
-
 //-------Create function called Search-Results that uses----// 
 
 //-------OpenWeather API city array to create search data-----//
