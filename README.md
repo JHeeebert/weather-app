@@ -33,17 +33,12 @@ THEN I am again presented with current and future conditions for that city
 ## 🔎 Preview
 
 <img src= "./assets/images/weatherAppMainPage.jpg"> 
-    alt= "this should be a screenshot of the project"/>
 <img src= "./assets/images/weatherAppCharlottePage.jpg"> 
-    alt= "this should be a screenshot of the project"/>
-<img src= "./assets/images/weatherArizonaPage.jpg"> 
-    alt= "this should be a screenshot of the project"/>
+<img src= "./assets/images/weatherArizonaPage.jpg">
 <img src= "./assets/images/weatherAppLaPage.jpg"> 
-    alt= "this should be a screenshot of the project"/>
 <img src= "./assets/images/weatherAppLasVegasPage.jpg"> 
-    alt= "this should be a screenshot of the project"/>
 <img src= "./assets/images/weatherAppSanDiegoPage.jpg"> 
-    alt= "this should be a screenshot of the project"/>    
+
 ## 🔗 Link to Repo
 
 [https://github.com/JHeeebert/weather-app]
